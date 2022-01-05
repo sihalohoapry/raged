@@ -49,6 +49,33 @@ class InformationController extends Controller
         return view('page.view-guru',$data
         );
     }
+    public function guruSd(){
+        $data['users'] = User::where([
+            ['roles','GURU'],
+            ['jenjang','SD']
+        ])->get();
+        
+        return view('page.view-guru',$data
+        );
+    }
+    public function guruSmp(){
+        $data['users'] = User::where([
+            ['roles','GURU'],
+            ['jenjang','SMP']
+        ])->get();
+        
+        return view('page.view-guru',$data
+        );
+    }
+    public function guruSma(){
+        $data['users'] = User::where([
+            ['roles','GURU'],
+            ['jenjang','SMA']
+        ])->get();
+        
+        return view('page.view-guru',$data
+        );
+    }
 
     public function showTeacher($id){
         $data = User::findOrFail($id);

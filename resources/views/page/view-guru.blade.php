@@ -35,13 +35,13 @@ Informasi
             </form>
         </div>
     </div>
+    <a href="{{ route('guru-sd') }}" class="btn btn-primary mb-4 ">SD</a>
+    <a href="{{ route('guru-smp') }}" class="btn btn-primary mb-4 ">SMP</a>
+    <a href="{{ route('guru-sma') }}" class="btn btn-primary mb-4 ">SMA</a>
+    <a href="{{ route('info-guru') }}" class="btn btn-primary mb-4 ">SEMUA</a>
 
-    @if (Request::get('keyword'))
-    <a href="{{ route('info-guru') }}" class="btn btn-primary mb-4 ">Kembali</a>
-    @endif
 
-
-    <div class="row mb-4">
+    <div class="row">
         @foreach ($users as $information)
         <div class="col-12 col-md-6 col-lg-4 col-xl-3">
             <div class="col-12 col-md-6 col-lg-4 col-xl-3">
@@ -92,7 +92,11 @@ Informasi
         </div>
         @endforeach
     </div>
-
+    <div class="row">
+        @if (Request::get('keyword'))
+    <a href="{{ route('info-guru') }}" class="btn btn-dark mb-5 ">Kembali</a>
+    @endif
+    </div>
 
 
 </div>

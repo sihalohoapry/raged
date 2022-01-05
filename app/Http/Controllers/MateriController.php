@@ -28,6 +28,32 @@ class MateriController extends Controller
             );
         
     }
+    public function materiSd()
+    {
+
+        $data['subject_learnings'] = SubjectLearning::where([
+            ['materi_untuk','SD']
+        ])->get();
+            return view('page.view-materi',$data
+        );
+        
+    }
+    public function materiSmp()
+    {
+
+        $data['subject_learnings']  = SubjectLearning::where('materi_untuk','SMP')->get();
+            return view('page.view-materi',$data
+        );
+        
+    }
+    public function materiSma()
+    {
+
+        $data['subject_learnings']  = SubjectLearning::where('materi_untuk','SMA')->get();
+            return view('page.view-materi',$data
+        );
+        
+    }
 
     /**
      * Show the form for creating a new resource.

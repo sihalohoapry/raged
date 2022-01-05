@@ -5,6 +5,7 @@ use App\Http\Controllers\MateriController;
 use App\Http\Controllers\RateController;
 use App\Http\Controllers\RatingController;
 use App\Http\Controllers\UserController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,14 @@ Route::view('/dashboar', '/page/dashboard')->name('dashboard')->middleware('auth
 Route::view('/create-information', '/page/create-information')->name('create-information')->middleware('auth');
 Route::resource('information', InformationController::class)->middleware('auth');
 Route::resource('materi', MateriController::class)->middleware('auth');
+Route::get('/materi-sd',[MateriController::class,'materiSd'])->name('materi-sd')->middleware('auth');
+Route::get('/materi-smp',[MateriController::class,'materiSmp'])->name('materi-smp')->middleware('auth');
+Route::get('/materi-sma',[MateriController::class,'materiSma'])->name('materi-sma')->middleware('auth');
+
 Route::get('/info-guru',[InformationController::class,'info_guru'])->name('info-guru')->middleware('auth');
+Route::get('/guru-sd',[InformationController::class,'guruSd'])->name('guru-sd')->middleware('auth');
+Route::get('/guru-smp',[InformationController::class,'guruSmp'])->name('guru-smp')->middleware('auth');
+Route::get('/guru-sma',[InformationController::class,'guruSma'])->name('guru-sma')->middleware('auth');
 Route::get('/info-siswa',[InformationController::class,'info_siswa'])->name('info-siswa')->middleware('auth');
 Route::post('rate/{id}', [RateController::class,'makeRate'])->name('make-rate')->middleware('auth');
 Route::match(['get', 'post'], 'show/{id}', [MateriController::class,'showAndAddView'])->name('show');

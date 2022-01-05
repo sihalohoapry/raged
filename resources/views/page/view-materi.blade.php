@@ -28,10 +28,10 @@ Materi
         </div>
     </div>
 
-    @if (Request::get('keyword'))
-    <a href="{{ route('materi.index') }}" class="btn btn-primary mb-4 ">Kembali</a>
-    @endif
-
+    <a href="{{ route('materi-sd') }}" class="btn btn-primary mb-4 ">SD</a>
+    <a href="{{ route('materi-smp') }}" class="btn btn-primary mb-4 ">SMP</a>
+    <a href="{{ route('materi-sma') }}" class="btn btn-primary mb-4 ">SMA</a>
+    <a href="{{ route('materi.index') }}" class="btn btn-primary mb-4 ">SEMUA</a>
 
     <div class="row mb-4">
         @foreach ($subject_learnings as $information)
@@ -74,6 +74,10 @@ Materi
         </div>
         @endforeach
     </div>
+
+    @if (Request::get('keyword'))
+    <a href="{{ route('materi.index') }}" class="btn btn-primary mb-4 ">Kembali</a>
+    @endif
 
 </div>
 
