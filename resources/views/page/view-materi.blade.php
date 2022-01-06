@@ -75,9 +75,7 @@ Materi
         @endforeach
     </div>
 
-    @if (Request::get('keyword'))
-    <a href="{{ route('materi.index') }}" class="btn btn-primary mb-4 ">Kembali</a>
-    @endif
+
 
 </div>
 

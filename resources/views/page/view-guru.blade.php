@@ -92,10 +92,7 @@ Informasi
         </div>
         @endforeach
     </div>
-    <div class="row">
-        @if (Request::get('keyword'))
-    <a href="{{ route('info-guru') }}" class="btn btn-dark mb-5 ">Kembali</a>
-    @endif
+    
     </div>
 
 
